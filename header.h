@@ -4,15 +4,13 @@
 #include <assert.h>
 #define EPSILON 1e-9
 
+#include "colors.h"
+#include "equation_solver.h"
+#include "Test.h"
+
 int Get_coeffs (double *a, double *b, double *c, int *nRoots);
-int Linear_solver (const double b, const double c, double *x1, int *nRoots);
-int Square_solver (const double a, const double b, const double c, double *x1, double *x2, int *nRoots);
 int Printing_roots (double x1, double x2, int nRoots);
 void Clear_buffer ();
-int Check_test (double a, double b, double c, double x2ref, double x1ref, int nRoots_ref);
-int Test ();
-int Equation_solver ();
-int Testing (int test_coeff);
 
 static int Compare_with_zero (double x);
 

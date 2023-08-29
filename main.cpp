@@ -1,7 +1,4 @@
 #include "header.h"
-#include "colors.h"
-#include "equation_solver.h"
-#include "Test.h"
 
 int main ()  // main body
 {
@@ -23,11 +20,6 @@ int main ()  // main body
 
         printf("Do you want to repeat the program? Press '1' to continue, otherwise press '0' to exit the program.\n");
         scanf("%d", &repeating_coeff);
-        while (repeating_coeff != 0 || repeating_coeff != 1)
-        {
-            printf("Invalid input. Enter valid value: \n");
-            Clear_buffer();
-        }
 
         system("cls");
     }
@@ -50,7 +42,7 @@ int Get_coeffs (double *a_ptr, double *b_ptr, double *c_ptr, int *nRoots)  // ta
 
     system("cls");
 
-
+    return 0;
 }
 
 int Printing_roots (double x1, double x2, int nRoots)
