@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "equation_solver.h"
+
+#include "../headers/main.h"
+#include "../headers/equation_solver.h"
+#include "../headers/Comparing.h"
 
 int Linear_solver (const double b, const double c, double *x1, int *nRoots) // solving LinearSolver (a = 0, b != 0, c = 0)
 {

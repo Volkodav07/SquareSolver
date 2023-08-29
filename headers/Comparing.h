@@ -1,3 +1,6 @@
-#define EPSILON 1e-9
+#ifndef COMPARING_H_
+#define COMPARING_H_
 
 static int Compare_with_zero (double x);
+
+#endif

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "Test.h"
+#include "../headers/Test.h"
 
 int Testing (int test_coeff)
 {

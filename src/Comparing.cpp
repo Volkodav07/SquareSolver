@@ -1,4 +1,7 @@
-#include "Comparing.h"
+#define EPSILON 1e-9
+
+#include <math.h>
+#include "../headers/Comparing.h"
 
 int Compare_with_zero (double x)  // comparing coeffs with zero
 {

@@ -1,4 +1,11 @@
-#include <tg_data.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <ctype.h>
+
+#include "../headers/main.h"
+#include "../headers/tg_data.h"
+#include "../headers/main.h"
 
 int Get_coeffs (double *a_ptr, double *b_ptr, double *c_ptr, int *nRoots)  // taking coeffs from user
 {
@@ -42,9 +49,9 @@ int Space_invalid (void)
     while((ch = getchar()) != '\n')
       {
         if (!isspace(ch))
-          return YES;
+          return 1;
       }
-    return NO;
+    return 0;
 }
 
 void Clear_buffer()
