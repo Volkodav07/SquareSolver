@@ -1,1 +1,2 @@
-# SquareSolver
+# Square eqaution solver
+
