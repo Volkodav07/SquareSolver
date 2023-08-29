@@ -1,16 +1,22 @@
-@CHCP 1251>NUL
+CFLAGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wno-missing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -Werror=vla -D_DEBUG -D_EJUDGE_CLIENT_SIDE
+IFLAGS = -I./headers/ -I./test/
 
-gcc -Wall -E main.cpp -o main.i
-gcc -Wall -E equation_solver.cpp -o equation_solver.i
-gcc -Wall -E Test.cpp -o Test.i
+all: a.exe object/main.o object/equation_zolver.o object/tg_data.o object/minorutil.o object/tester.o
 
-gcc -Wall -S main.i -o main.s
-gcc -Wall -S equation_solver.i -o equation_solver.s
-gcc -Wall -S Test.i -o Test.s
+a.exe: object/main.o object/solvingutil.o object/ioutil.o object/minorutil.o object/tester.o
+	g++ object/main.o object/solvingutil.o object/ioutil.o object/minorutil.o object/tester.o
 
-gcc -Wall -g3 -c main.cpp
-gcc -Wall -g3 -c equation_solver.cpp
-gcc -Wall -g3 -c Test.cpp
+object/main.o: src/main.cpp
+	g++ $(IFLAGS) $(CFLAGS) -c src/main.cpp -o object/main.o
 
-gcc -Wall main.o equation_solver.o Test.o -o GitHub
+object/solvingutil.o: src/solvingutil.cpp
+	g++ $(IFLAGS) $(CFLAGS) -c src/solvingutil.cpp -o object/solvingutil.o
 
+object/ioutil.o: src/ioutil.cpp
+	g++ $(IFLAGS) $(CFLAGS) -c src/ioutil.cpp -o object/ioutil.o
+
+object/minorutil.o: src/minorutil.cpp
+	g++ $(IFLAGS) $(CFLAGS) -c src/minorutil.cpp -o object/minorutil.o
+
+object/tester.o: testing/tester.cpp
+	g++ $(IFLAGS) $(CFLAGS) -c testing/tester.cpp -o object/tester.o

@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 #include "Test.h"
 
 int Testing (int test_coeff)

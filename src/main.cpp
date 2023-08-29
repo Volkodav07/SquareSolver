@@ -1,4 +1,7 @@
-#include "header.h"
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include "main.h"
 
 int main ()  // main body
 {

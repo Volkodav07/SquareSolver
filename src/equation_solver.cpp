@@ -1,17 +1,9 @@
-# 1 "equation_solver.cpp"
-# 1 "<built-in>"
-# 1 "<command-line>"
-# 1 "equation_solver.cpp"
-# 1 "equation_solver.h" 1
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include "equation_solver.h"
 
-
-
-int Linear_solver (const double b, const double c, double *x1, int *nRoots);
-int Square_solver (const double a, const double b, const double c, double *x1, double *x2, int *nRoots);
-int Equation_solver (double a, double b, double c, double &x1, double &x2, int &nRoots);
-# 2 "equation_solver.cpp" 2
-
-int Linear_solver (const double b, const double c, double *x1, int *nRoots)
+int Linear_solver (const double b, const double c, double *x1, int *nRoots) // solving LinearSolver (a = 0, b != 0, c = 0)
 {
      if (Compare_with_zero(b) == 0)
      {
@@ -63,10 +55,11 @@ int Square_solver (const double a, const double b, const double c, double *x1, d
     return 0;
 }
 
-int Equation_solver (double a, double b, double c, double &x1, double &x2, double &nRoots)
+int Equation_solver (double a, double b, double c, double x1, double x2, int nRoots)
 {
     if (Compare_with_zero (a) == 0) {Linear_solver (b, c, &x1, &nRoots);}
     else {Square_solver (a, b, c, &x1, &x2, &nRoots);}
 
     return 0;
+
 }

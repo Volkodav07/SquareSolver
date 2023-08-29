@@ -4,8 +4,8 @@
 #include <assert.h>
 #define EPSILON 1e-9
 
-#include "colors.h"
-#include "equation_solver.h"
+#include "colors.cpp"
+#include "equation_solver.cpp"
 #include "Test.h"
 
 int Get_coeffs (double *a, double *b, double *c, int *nRoots);
